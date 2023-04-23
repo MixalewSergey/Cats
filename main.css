@@ -6,12 +6,24 @@ body {
 h2 {
     margin: 0;
 }
-
+.Header-cats{
+    background-color: beige;
+    margin: auto;
+    color:blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1020px;
+    
+}
 .wrapper {
     min-height: 100vh;
     background-color: beige;
     padding: 30px;
-    margin: auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
     max-width: 1020px;
     box-sizing: border-box;
     display: grid;
@@ -28,10 +40,17 @@ h2 {
     align-items: center;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 15px springgreen, 0 0 5px #0004;
+    border: 4mm ridge rgba(211, 220, 50, .6);
     position: relative;
 }
+.card:hover{
+    box-shadow: 0 0 15px springgreen, 0 0 5px #0004;
+    transform: scale(1.20);
+    position: relative;
+    z-index: 3;
+    
 
+}
 .card .like {
     position: absolute;
     right: 8px;
@@ -39,6 +58,18 @@ h2 {
     color: blueviolet;
     cursor: pointer;
     font-size: 30px;
+}
+.card .delcats{
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+
+}
+.card .delcats:hover{
+    color:red;
 }
 
 .card .pic {
@@ -52,11 +83,12 @@ h2 {
 }
 
 .pic.tmp {
-    background-image: url(./images/default.png);
+    background-image: url("./images/default.png");
     background-size: contain;
 
 }
-.btn{outline: none;
+.btn{
+    outline: none;
     border: none;
     width: 30px;
     height: 30px;
@@ -69,6 +101,7 @@ h2 {
 .btn:hover{
     color: springgreen;
     transform: scale(1.1, 1.1);
+    animation: spin 1.5s  ease-in-out infinite;
     
 }
 
@@ -101,7 +134,7 @@ h2 {
     display: flex;
 }
 .modal{
-    background-color: #fff;
+    background-color: beige;
     padding: 16px;
     border-radius: 8px;
     width: calc(100% - 100px);
@@ -130,3 +163,36 @@ input{
     background-position: center;
     background-size: cover;
 }
+
+.favinp{
+    width: auto;
+    height: auto;
+    }
+footer{
+    background-color: beige;
+    margin: auto;
+    color:blue;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    justify-content: center;
+    max-width: 1020px;
+}
+.footertext{
+    margin-left: 30px;
+    font-size: large;
+    }
+.footerend{
+    padding:auto;
+    font-size: 80%;
+}
+
+@keyframes spin{
+    0%{
+      transform: rotate(0deg);
+    }
+  
+    100%{
+      transform: rotate(360deg);
+    }
+  }

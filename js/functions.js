@@ -26,7 +26,13 @@ function createCard(pet, tag) {
     cardLike.addEventListener("click", e => {
         setLike(cardLike, pet.id, !pet.favorite);
     })
-    card.append(cardImg, cardTitle, cardLike);
+    const delCats = document.createElement("i");
+    delCats.className = "fa-solid fa-skull-crossbones delcats"
+    delCats.addEventListener("click", e =>{
+        deleteCard(pet.id, card);
+    })
+
+    card.append(cardImg, cardTitle, cardLike, delCats);
     tag.append(card);
 }
 
@@ -51,4 +57,15 @@ function setLike(el, id, like) {
         })
 
 }
-function delCats(){}
+function deleteCard(id, el){
+    if (id) {
+        fetch(`${path}/delete/${id}`, {
+            method: "delete"
+        })
+            .then(res => {
+                if (res.status === 200) {
+                    el.remove();
+                   
+                }
+            })
+    }}
