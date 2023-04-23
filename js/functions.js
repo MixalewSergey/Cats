@@ -29,7 +29,13 @@ function createCard(pet, tag) {
     const delCats = document.createElement("i");
     delCats.className = "fa-solid fa-skull-crossbones delcats"
     delCats.addEventListener("click", e =>{
+        e.stopPropagation();
+        let isDelete = confirm(
+          `Вы уверены, что хотите удалить котика с именем ${pet.name} ?`
+        );
+        if (isDelete){
         deleteCard(pet.id, card);
+    }
     })
 
     card.append(cardImg, cardTitle, cardLike, delCats);
