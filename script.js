@@ -69,7 +69,7 @@ addForm.addEventListener("submit", e => {
                 body: JSON.stringify(body)
             })
         })
-        .then(res => {
+        .then(res => {// Очистка формы создание котика
             if (res.status === 200){
             addForm.reset();
             prevTag.style = null;

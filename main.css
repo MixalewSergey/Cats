@@ -196,3 +196,15 @@ footer{
       transform: rotate(360deg);
     }
   }
+  @media (max-width: 520px) {
+    .wrapper {
+      max-width: 520px;
+      display: flex;
+    flex-direction: column;
+    
+    }
+    footer{
+  display: flex;
+    flex-direction: column;  
+}
+}
